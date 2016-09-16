@@ -1481,20 +1481,7 @@ body#afui .splt {
   }
 }
 @media all {
-  .wrapping-col > .d-margins,
-  .wrapping-col > .afScrollPanel > .d-margins {
-    margin-left: 3px;
-    margin-right: 4px;
-  }
-  .wrapping-col > .d-margins,
-  .wrapping-col > .afScrollPanel > .d-margins {
-    margin-left: 3px;
-    margin-right: 4px;
-  }
-  .d-margins {
-    margin-top: 5px;
-    margin-bottom: 6px;
-  }
+
 }
 @media all {
   .grid-pad {
@@ -1613,7 +1600,7 @@ label:empty {
 }
 @media all {
   .active-graphic-button:active {
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #dddddd;
   }
 }
@@ -1845,4 +1832,48 @@ label:empty {
 }
 .button-icon-right {
   float: right;
+}
+@media all {
+  .blue {
+    background-color: #009dd3;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+.left-receptacle {
+  float: left;
+}
+.right-receptacle {
+  float: right;
+}
+[data-uib="media/text"] p:first-of-type {
+  margin-top: 0px;
+}
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media all {
+  .color p {
+    color: #ebebeb;
+    text-align: center;
+  }
+}
+.startScreen {
+  margin-top: 180px;
+}
+.startScreenTitel {
+  color: white;
+  text-align: center;
+}
+.startScreenButton {
+  padding: 8px;
+  color: #008AC9;
+  font-weight: bold;
+}
+.startScreenImp {
+  margin-top: 30px;
+  margin-left: 60px;
 }

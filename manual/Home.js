@@ -1,7 +1,8 @@
-Home = function(image) {
-  // this.ratingOverView = new Rating(this);
+Home = function(data) {
+  debugger;
+  this.data = data;
   this.ratingView = new RatingView(this);
-  this.ratingOverView = new Rating(this, this.ratingView.getNumberoOfAspects(), image);
+  this.ratingOverView = new Rating(this, this.ratingView.getNumberoOfAspects(), data);
   this.ratingView.setBackCallback(bindFnToContext(this.showRatingOverView, this));
 
   this.currentView = this.ratingOverView.getUI();
@@ -56,6 +57,7 @@ Home.prototype.showRatingOverView = function () {
   this.getRatingOverView().setLikeValue(likes);
   this.getRatingOverView().setFavoritesValue(favorites);
   this.getRatingOverView().setRenovationValue(renovation);
+  this.getRatingOverView().setCostValue(this.data.cost);
 
   var p = this.currentView.parentElement;
   p.replaceChild(this.getRatingOverView().getUI(),this.currentView);

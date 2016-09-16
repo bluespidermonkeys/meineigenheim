@@ -43,8 +43,11 @@ HomesView.prototype.showAll = function () {
 };
 
 HomesView.prototype.populateDummyData = function () {
-  this.addHome(new Home('images/Aussen1.jpg'));
-  var second = new Home('images/Aussen2.jpg');
+  var data1 = {'image':'images/Aussen1.jpg', 'cost':9, 'likes':2, 'favorites':1, 'renovations':0};
+  var data2 = {'image':'images/Aussen2.jpg', 'cost':8, 'likes':1, 'favorites':0, 'renovations':1};
+
+  this.addHome(new Home(data1));
+  var second = new Home(data2);
   second.setPosition(0, 320);
   this.addHome(second);
 };

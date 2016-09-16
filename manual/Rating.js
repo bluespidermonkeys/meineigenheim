@@ -1,16 +1,39 @@
-Rating = function(ctrl, items, image) {
+Rating = function(ctrl, items, data) {
   this.ctrl = ctrl;
   this.like = null;
   this.renovation = null;
   this.cost = null;
   this.favorites = null;
-  this.image = image;
+  this.image = data.image;
+  this.data = data;
 
   this.height = 300;
   this.items = items;
 
   this.setupUI();
+  this.initUI();
 }
+
+Rating.prototype.initUI = function () {
+  try {
+    this.setLikeValue(this.data.likes);
+  } catch (e) {
+    this.setLikeValue(0);
+  }
+
+  try {
+    this.setRenovationValue(this.data.renovations);
+  } catch (e) {
+      this.setRenovationValue(0);
+  }
+
+  try {
+    this.setFavoritesValue(this.data.favorites);
+  } catch (e) {
+    this.setFavoritesValue(0);
+  }
+
+};
 
 Rating.prototype.__calculateDisplayValue = function (value) {
   return (this.height / this.items) * value;

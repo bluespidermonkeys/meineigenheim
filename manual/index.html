@@ -2,18 +2,28 @@
 <html>
 <head>
                 <link rel="stylesheet" type="text/css" href="styles.css">
-				<script src="Home.js" id="xdkJScordova_"></script>
+				            <script src="HomeController.js"></script>
+                    <script src="HomeScreen.js"></script>
+                    <script src="HomesView.js"></script>
+                    <script src="Home.js"></script>
+                    <script src="Rating.js"></script>
+                    <script src="RatingView.js"></script>
+                    <script src="ratingviews/Basic.js"></script>
+                    <script src="ratingviews/Kitchen.js"></script>
+                    <script src="ratingviews/Bath.js"></script>
+                    <script src="ratingviews/BaseView.js"></script>
 				<script type="text/javascript">
 				window.onload = function (e) {
-					debugger;
-					var b = document.getElementsByTagName('body')[0];
-					var home = new Home(b);
+					// debugger;
+					// var b = document.getElementsByTagName('body')[0];
+					// var home = new Home(b);
+
+          var home = new HomeController(document.getElementById('container'));
 				}
 				</script>
 				</head>
 				<body>
 					<div id="container">
 					</div>
-					hello
 				</body>
 </html>

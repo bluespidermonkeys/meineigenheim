@@ -1811,3 +1811,44 @@ label:empty {
 .list-group .d-margins {
   margin: 0;
 }
+@media all {
+  .bar-bg {
+    background-color: #dadada;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
+@media all {
+  .bar-gutter .sidebar-content > .grid-pad {
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media all {
+  .thumb-bg > .sidebar-thumb {
+    background-image: url('../sidebar/css/images/gripper.png');
+  }
+  .thumb-bg > .sidebar-thumb {
+    background-color: ;
+  }
+  .thumb-bg > .sidebar-thumb:hover,
+  .thumb-bg > .sidebar-thumb:active {
+    background-color: #eeeeee;
+  }
+}
+.button-icon-top {
+  display: block;
+  margin: auto;
+}
+.button-icon-bottom {
+  display: block;
+  margin: auto;
+}
+.button-icon-left {
+  float: left;
+}
+.button-icon-right {
+  float: right;
+}

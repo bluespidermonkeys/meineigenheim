@@ -1,36 +1,16 @@
-Rating = function(ctrl, items) {
+Rating = function(ctrl, items, image) {
   this.ctrl = ctrl;
   this.like = null;
   this.renovation = null;
   this.cost = null;
   this.favorites = null;
-  this.image;
+  this.image = image;
 
   this.height = 300;
   this.items = items;
 
   this.setupUI();
-
-  window.rating = this;
 }
-
-Rating.prototype.getLikeValue = function () {
-
-};
-
-Rating.prototype.getRenovationValue = function () {
-
-};
-
-Rating.prototype.getCostValue = function () {
-
-};
-
-Rating.prototype.getFavoritesValue = function () {
-
-};
-
-////
 
 Rating.prototype.__calculateDisplayValue = function (value) {
   return (this.height / this.items) * value;
@@ -56,8 +36,6 @@ Rating.prototype.setFavoritesValue = function (value) {
   this.favorites.style.height = this.__calculateDisplayValue(value) + "px";
 };
 
-////
-
 Rating.prototype.getUI = function() {
   return this.container;
 }
@@ -71,7 +49,7 @@ Rating.prototype.setupUI = function() {
   this.container.style.position = "absolute";
   this.container.style.width = "400px";
   this.container.style.height = this.height + "px";
-  this.container.style.background = "transparent url(images/Aussen1.jpg)";
+  this.container.style.background = "transparent url('" + this.image + "')";
   this.container.style.verticalAlign = "bottom";
   this.container.style.border = "20px solid white";
 
@@ -89,6 +67,11 @@ Rating.prototype.setupUI = function() {
   this.setupRenovation();
   this.container.appendChild(this.renovation);
 }
+
+Rating.prototype.setPosition = function (x,y) {
+  this.container.style.top = y + "px";
+  this.container.style.left = x + "px";
+};
 
 Rating.prototype.setupCost = function() {
   this.cost = this.createRate("yellow");

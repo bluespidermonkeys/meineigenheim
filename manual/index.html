@@ -13,6 +13,25 @@
                     <script src="ratingviews/Bath.js"></script>
                     <script src="ratingviews/BaseView.js"></script>
 				<script type="text/javascript">
+
+        function bindFnToContext( fn, context ) {
+        	if ( typeof fn != "function") {
+        		throw "not a Function, can not bind " + fn;
+        	}
+
+        //    if (arguments.length < 2 && (typeof arguments[0] === "undefined")) return this;
+
+        	var args = Array.prototype.slice.call(arguments, 2);
+
+        	var boundFn = function () {
+            	var a = args.concat( arguments );
+            	return fn.apply(context, a);
+        	}
+
+        	return boundFn;
+        }
+
+
 				window.onload = function (e) {
 					// debugger;
 					// var b = document.getElementsByTagName('body')[0];

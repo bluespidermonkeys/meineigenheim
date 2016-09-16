@@ -1,7 +1,7 @@
-Home = function() {
+Home = function(image) {
   // this.ratingOverView = new Rating(this);
   this.ratingView = new RatingView(this);
-  this.ratingOverView = new Rating(this, this.ratingView.getNumberoOfAspects());
+  this.ratingOverView = new Rating(this, this.ratingView.getNumberoOfAspects(), image);
   this.ratingView.setBackCallback(bindFnToContext(this.showRatingOverView, this));
 
   this.currentView = this.ratingOverView.getUI();
@@ -17,6 +17,9 @@ Home.prototype.getRatingOverView = function () {
 
 Home.prototype.showRatingView = function () {
   // debugger;
+  if (typeof this.detailViewListener === 'function') {
+    this.detailViewListener(this);
+  }
   var p = this.currentView.parentElement;
   p.replaceChild(this.getRatingView().getUI(),this.currentView);
   this.currentView = this.getRatingView().getUI();
@@ -26,7 +29,19 @@ Home.prototype.getRatingView = function () {
   return this.ratingView
 };
 
+Home.prototype.registerDetailViewListener = function (listener) {
+  this.detailViewListener = listener;
+};
+
+Home.prototype.registerOverviewListener = function (listener) {
+  this.overViewListener = listener;
+};
+
+
 Home.prototype.showRatingOverView = function () {
+  if (typeof this.detailViewListener === 'function') {
+    this.overViewListener(this);
+  }
   var likes = 0;
   var favorites = 0;
   var renovation = 0;
@@ -47,19 +62,14 @@ Home.prototype.showRatingOverView = function () {
   this.currentView = this.getRatingOverView().getUI();
 }
 
-function bindFnToContext( fn, context ) {
-	if ( typeof fn != "function") {
-		throw "not a Function, can not bind " + fn;
-	}
+Home.prototype.setPosition = function (x,y) {
+  this.getRatingOverView().setPosition(x,y);
+};
 
-//    if (arguments.length < 2 && (typeof arguments[0] === "undefined")) return this;
+Home.prototype.hide = function () {
+  this.currentView.style.display = "none";
+};
 
-	var args = Array.prototype.slice.call(arguments, 2);
-
-	var boundFn = function () {
-    	var a = args.concat( arguments );
-    	return fn.apply(context, a);
-	}
-
-	return boundFn;
-}
+Home.prototype.show = function () {
+  this.currentView.style.display = "block";
+};

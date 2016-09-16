@@ -22,6 +22,10 @@ Home.prototype.showRatingView = function () {
   this.currentView = this.getRatingView().getUI();
 }
 
+Home.prototype.getRatingView = function () {
+  return this.ratingView
+};
+
 Home.prototype.showRatingOverView = function () {
   var likes = 0;
   var favorites = 0;
@@ -59,8 +63,3 @@ function bindFnToContext( fn, context ) {
 
 	return boundFn;
 }
-
-
-Home.prototype.getRatingView = function () {
-  return this.ratingView
-};

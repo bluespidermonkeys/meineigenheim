@@ -38,7 +38,11 @@ Home.prototype.showRatingOverView = function () {
   this.getRatingOverView().setFavoritesValue(favorites);
   this.getRatingOverView().setRenovationValue(renovation);
 
-<<<<<<< 5f68f0ec70450696d22e6c429ca1edff96d81765
+  var p = this.currentView.parentElement;
+  p.replaceChild(this.getRatingOverView().getUI(),this.currentView);
+  this.currentView = this.getRatingOverView().getUI();
+}
+
 function bindFnToContext( fn, context ) {
 	if ( typeof fn != "function") {
 		throw "not a Function, can not bind " + fn;
@@ -55,14 +59,8 @@ function bindFnToContext( fn, context ) {
 
 	return boundFn;
 }
-=======
-  var p = this.currentView.parentElement;
-  p.replaceChild(this.getRatingOverView().getUI(),this.currentView);
-  this.currentView = this.getRatingOverView().getUI();
-}
 
 
 Home.prototype.getRatingView = function () {
   return this.ratingView
 };
->>>>>>> ratings are dynamic

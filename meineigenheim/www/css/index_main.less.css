@@ -1580,7 +1580,8 @@ label:empty {
 }
 @media all {
   .image-gallery-size {
-    height: 250px;
+    width: 500px;
+    height: 300px;
   }
 }
 @media all {

@@ -3,23 +3,23 @@ Bewertung = function(){
     this.unlike = false;
     this.renovation = false;
     this.love = false;
-}
+};
 
 Bewertung.prototype.clickLike = function(){
     this.like = true;
-}
+};
 
 Bewertung.prototype.clickUnlike = function(){
     this.unlike = true;
-}
+};
 
 Bewertung.prototype.clickRenovation = function(){
     this.renovation = true;
-}
+};
 
 Bewertung.prototype.clickLove = function(){
     this.love = true;
-}
+};
 
 Home = function() {
 	this.aussen = new Bewertung();

@@ -48,6 +48,14 @@
          return false;
     });
 
+        /* button  Objekte */
+    $(document).on("click", ".uib_w_32", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#ratingoverview"); 
+         return false;
+    });
+    
     }
  document.addEventListener("app.Ready", register_event_handlers, false);
 })();

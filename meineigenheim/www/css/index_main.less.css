@@ -1656,3 +1656,9 @@ label:empty {
     padding: 5px;
   }
 }
+.allow-badge > .badge.glyphicon {
+  display: inline-block;
+}
+.list-group .d-margins {
+  margin: 0;
+}

@@ -7,7 +7,7 @@ Rating = function(ctrl, items, data) {
   this.image = data.image;
   this.data = data;
 
-  this.height = 300;
+  this.height = 400;
   this.items = items;
 
   this.setupUI();
@@ -70,11 +70,12 @@ Rating.prototype.imageClicked = function (e) {
 Rating.prototype.setupUI = function() {
   this.container = document.createElement("div");
   this.container.style.position = "absolute";
-  this.container.style.width = "400px";
+  this.container.style.width = "700px";
+  this.container.style.left = "60px";
   this.container.style.height = this.height + "px";
   this.container.style.background = "transparent url('" + this.image + "')";
   this.container.style.verticalAlign = "bottom";
-  this.container.style.border = "20px solid white";
+  this.container.style.border = "60px solid white";
 
   this.container.addEventListener('click', bindFnToContext(this.imageClicked, this), false);
 
@@ -98,29 +99,29 @@ Rating.prototype.setPosition = function (x,y) {
 
 Rating.prototype.setupCost = function() {
   this.cost = this.createRate("yellow");
-  this.cost.style.left = "380px";
+  this.cost.style.left = "670px";
 }
 
 Rating.prototype.setupLike = function() {
   this.like = this.createRate("red");
-  this.like.style.left = "360px";
+  this.like.style.left = "640px";
 }
 
 Rating.prototype.setupFavorites = function() {
   this.favorites = this.createRate("magenta");
-  this.favorites.style.left = "340px";
+  this.favorites.style.left = "610px";
 }
 
 Rating.prototype.setupRenovation = function() {
   this.renovation = this.createRate("dodgerblue");
-  this.renovation.style.left = "320px";
+  this.renovation.style.left = "590px";
 }
 
 Rating.prototype.createRate = function(color) {
   var rate = document.createElement('div');
   rate.style.position = "absolute";
   rate.style.bottom = "0px";
-  rate.style.width = "20px";
+  rate.style.width = "30px";
   rate.style.height = "120px";
   rate.style.backgroundColor = color;
   rate.style.opacity = 0.8;

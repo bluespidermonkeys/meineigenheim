@@ -42,4 +42,10 @@ Bath.prototype.renovateButtonClicked = function (e) {
 
 Bath.prototype.registerNextEvent = function (nextCallback) {
   this.nextCallback = nextCallback;
+  this.view.setNextCallback = nextCallback;
+};
+
+Bath.prototype.registerPreviousEvent = function (previousCallback) {
+  this.previousCallback = previousCallback;
+  this.view.previousCallback = previousCallback;
 };

@@ -15,6 +15,7 @@ RatingView.prototype.setupAspects = function () {
   this.aspects.push(new Neighbors('images/Nachbarschaft.PNG'));
   this.aspects.push(new FacebookNeighbors('images/Facebook_Nachbarschaft.PNG'));
   this.aspects.push(new XingNeighbors('images/Xing_Nachbarschaft.PNG'));
+  this.aspects.push(new Jodel('images/Jodel_Nachbarschaft.PNG'));
   this.aspects.push(new Property('images/Grundstueck.PNG'));
   this.aspects.push(new Gemeinde('images/Gemeinde.PNG'));
   this.aspects.push(new Schule('images/Schule.PNG'));

@@ -17,7 +17,7 @@ FinancingView.prototype.setupUI = function() {
 
 	this.titleBar = document.createElement("div");
 	this.title = document.createElement("h1");
-	this.title.innerHTML = "Beratung";
+	this.title.innerHTML = "Finanzieren und versichern";
 	this.title.style.display = "inline-block";
 	this.title.style.width = "360px";
 

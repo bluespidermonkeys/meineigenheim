@@ -22,7 +22,7 @@ HomeScreen.prototype.setupUI = function () {
   this.newHome = this.__createMenuItem("Neues Objekt", "images/Icon_Neues_Objekt.PNG", 40, 560, bindFnToContext(this.newObjectClicked, this));
   this.homes = this.__createMenuItem("Objekte", "images/Icon_Objekte.PNG", 500, 560, bindFnToContext(this.homesClicked, this));
   this.mydata = this.__createMenuItem("Meine Daten", "images/Icon_Meine_Daten.PNG", 40, 820, bindFnToContext(this.dataClicked, this));
-  this.beratung = this.__createMenuItem("Beratung", "images/Icon_Beratung.PNG", 500, 820, bindFnToContext(this.financingClicked, this));
+  this.beratung = this.__createMenuItem("Finanzieren und versichern", "images/Icon_Beratung.PNG", 500, 820, bindFnToContext(this.financingClicked, this));
 
   this.container.appendChild(this.newHome);
   this.container.appendChild(this.homes);
@@ -70,7 +70,7 @@ HomeScreen.prototype.__createMenuItem = function (text, imgurl, x, y, callback) 
   item.style.left = x + "px";
   item.style.top = y + "px";
   item.style.width = "380px";
-  item.style.height = "100px";
+  item.style.height = "120px";
   item.style.color = "#009DD3";
   item.style.backgroundColor = "white";
   item.style.padding = "4px";

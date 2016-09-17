@@ -10,7 +10,8 @@ HomeScreen.prototype.getUI = function () {
 HomeScreen.prototype.setupUI = function () {
   this.container = document.createElement('div');
   this.title = document.createElement('h1');
-  this.title.style.width = "960px"
+  this.title.style.width = "960px";
+  this.title.style.fontSize = "96pt";
   this.title.innerHTML = "Mein<br />Eigenheim";
   this.title.style.color = "white";
   this.container.appendChild(this.title);
@@ -69,10 +70,13 @@ HomeScreen.prototype.__createMenuItem = function (text, x, y, callback) {
   item.style.left = x + "px";
   item.style.top = y + "px";
   item.style.width = "380px";
-  item.style.height = "160px";
+  item.style.height = "100px";
   item.style.color = "#009DD3";
   item.style.backgroundColor = "white";
   item.style.padding = "4px";
+  item.style.paddingTop = "60px";
+  item.style.fontSize = "38pt";
+  item.style.fontWeight = "bold";
 
   item.addEventListener( "click", callback, false );
 

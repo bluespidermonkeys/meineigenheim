@@ -9,7 +9,7 @@ NewObjectView.prototype.getUI = function() {
 NewObjectView.prototype.setupUI = function() {
 	this.container = document.createElement("div");
 	this.container.style.position = "absolute";
-	this.container.style.width = "400px";
+	this.container.style.width = "920px";
 	this.container.style.height = this.height + "px";
 	this.container.style.background = "white";
 	this.container.style.verticalAlign = "bottom";
@@ -23,6 +23,7 @@ NewObjectView.prototype.setupUI = function() {
 
 	this.image = document.createElement("img");
 	this.image.src = 'images/Eigenheim_erfassen.PNG';
+	this.image.width = 700;
 
 	this.titleBar.appendChild(this.title);
 	this.container.appendChild(this.titleBar);

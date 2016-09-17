@@ -1,4 +1,5 @@
-BaseView = function(title, image) {
+BaseView = function(title, image, data) {
+  this.data = data;
   this.image = image;
   this.title = title;
 
@@ -40,18 +41,31 @@ BaseView.prototype.setupUI = function () {
   this.likeButton.style.width = "160px";
   this.likeButton.style.height = "60px";
   this.likeButton.style.float = "left";
+  // this.likeButton.style.padding = "10px";
   this.likeButton.style.backgroundColor = "lime";
   // this.likeButton.innerHTML = "+";
   this.likeButton.style.background = "transparent url('images/Smile_gut.PNG') no-repeat center center";
+  // if(this.data.l) {
+  //   this.likeButton.style.border = "10px solid #009DD3";
+  // } else {
+  //   this.likeButton.style.border = "10px solid white";
+  // }
 
   this.dislikeButton = document.createElement('div');
   this.dislikeButton.style.width = "160px";
   this.dislikeButton.style.height = "60px";
   this.dislikeButton.style.marginLeft = "80px";
   this.dislikeButton.style.float = "left";
+  // this.dislikeButton.style.padding = "10px";
   this.dislikeButton.style.backgroundColor = "orange";
   // this.dislikeButton.innerHTML = "-";
   this.dislikeButton.style.background = "transparent url('images/Smile_schlecht.PNG') no-repeat center center";
+  // if(this.data.l) {
+  //   this.likeButton.style.border = "10px solid white";
+  // } else {
+  //   this.likeButton.style.border = "10px solid #009DD3";
+  // }
+
 
   this.likeButtons.appendChild(this.likeButton);
   this.likeButtons.appendChild(this.dislikeButton);

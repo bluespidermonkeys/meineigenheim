@@ -1,6 +1,7 @@
 HomeController = function(container) {
 
 	this.homesView = new HomesView();
+	this.newObjectView = new NewObjectView();
 	this.homescreen = new HomeScreen(this);
 
 	this.container = container;
@@ -13,6 +14,11 @@ HomeController.prototype.navigateToHomes = function () {
 	this.container.removeChild(this.container.children[0]);
 	this.container.appendChild(this.homesView.getUI());
 };
+
+HomeController.prototype.navigateToNewObject = function () {
+	this.container.removeChild(this.container.children[0]);
+	this.container.appendChild(this.newObjectView.getUI());
+}
 
 HomeController.prototype.attachUI2 = function() {
 	this.container.appendChild(this.homesView.getUI());

@@ -125,6 +125,42 @@
                         </div>
                 </div>
                 <div class="upage hidden" id="rateingview">
+                    <script>
+                    Bewertung = function(name){
+    this.name = name;
+    this.like = false;
+    this.unlike = false;
+    this.renovation = false;
+    this.love = false;
+};
+
+Bewertung.prototype.clickLike = function(){
+    this.like = true;
+};
+
+Bewertung.prototype.clickUnlike = function(){
+    this.unlike = true;
+};
+
+Bewertung.prototype.clickRenovation = function(){
+    this.renovation = true;
+};
+
+Bewertung.prototype.clickLove = function(){
+    this.love = true;
+};
+
+                        Bewertung.prototype.toString = function(){
+                            return this.name + this.love ? '❤':'' + this.like?'*':'';
+                        }
+
+
+window.onLoad = function(){
+    window.eigenheim = [new Bewertung('Aussen'), new Bewertung('Wohnzimmer')];
+    debugger;
+    document.getElementById('gugus').innerHTML = window.eigenheim[0].toString();
+}
+                    </script>
                         <div class="upage-outer">
                                 <div class="uib-header header-bg container-group inner-element uib_w_1" data-uib="layout/header" data-ver="0">
                                         <h2>Bewertung</h2>
@@ -139,7 +175,8 @@
                                         <div class="panel widget uib_w_7 panel-default" data-uib="twitter%20bootstrap/collapsible" data-ver="1">
                                                 <div class="panel-heading">
                                                         <h4 class="panel-title">
-           <a class="accordion-toggle" data-toggle="collapse" href="#bs-accordion-group-6" data-parent="#bs-accordion-2">Aussen</a>
+           <a id="gugus" class="accordion-toggle" data-toggle="collapse" href="#bs-accordion-group-6" data-parent="#bs-accordion-2"></a>
+           <a class="accordion-toggle" data-toggle="collapse" href="#bs-accordion-group-6" data-parent="#bs-accordion-2">tmp</a>
        </h4>
                                                 </div>
                                                 <div id="bs-accordion-group-6" class="panel-collapse collapse">

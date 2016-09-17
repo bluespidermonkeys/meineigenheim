@@ -18,7 +18,7 @@ HomeScreen.prototype.setupUI = function () {
 
   this.menu = document.createElement('div');
 
-  this.newHome = this.__createMenuItem("Neues Objekt", 0, 260);
+  this.newHome = this.__createMenuItem("Neues Objekt", 0, 260, bindFnToContext(this.newObjectClicked, this));
   this.homes = this.__createMenuItem("Objekte", 200, 260, bindFnToContext(this.homesClicked, this));
   this.mydata = this.__createMenuItem("Meine Daten", 0, 320);
   this.beratung = this.__createMenuItem("Beratung", 200, 320);
@@ -43,6 +43,10 @@ HomeScreen.prototype.setupUI = function () {
 
 HomeScreen.prototype.homesClicked = function (e) {
   this.homeCtrl.navigateToHomes();
+};
+
+HomeScreen.prototype.newObjectClicked = function (e) {
+	this.homeCtrl.navigateToNewObject();
 };
 
 HomeScreen.prototype.clickedImp = function(e) {

@@ -1,5 +1,5 @@
 Home = function(data) {
-  debugger;
+  // debugger;
   this.data = data;
   this.ratingView = new RatingView(this);
   this.ratingOverView = new Rating(this, this.ratingView.getNumberoOfAspects(), data);

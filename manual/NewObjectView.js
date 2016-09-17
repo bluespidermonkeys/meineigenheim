@@ -23,12 +23,9 @@ NewObjectView.prototype.setupUI = function() {
 
 	this.image = document.createElement("img");
 	this.image.src = 'images/Eigenheim_erfassen.PNG';
-<<<<<<< HEAD
 	this.image.addEventListener('click',
 			bindFnToContext(this.immoscoutClicked, this), false);
-=======
 	this.image.width = 700;
->>>>>>> origin/master
 
 	this.titleBar.appendChild(this.title);
 	this.container.appendChild(this.titleBar);

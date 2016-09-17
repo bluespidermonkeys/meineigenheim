@@ -9,6 +9,12 @@ RatingView.prototype.setupAspects = function () {
   this.aspects = [];
   this.aspects.push(new Bath('images/Bad1.jpg'));
   this.aspects.push(new Kitchen('images/Kueche.jpg'));
+  try{
+  this.aspects.push(new FacebookNeighbors('images/Facebook_Nachbarschaft.PNG'));
+  } catch(e) {};
+  try{
+	  this.aspects.push(new XingNeighbors('images/Xing_Nachbarschaft.PNG'));
+	  } catch(e) {};
 };
 
 RatingView.prototype.getNumberoOfAspects = function () {

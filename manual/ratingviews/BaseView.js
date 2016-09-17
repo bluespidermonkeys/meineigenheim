@@ -27,25 +27,31 @@ BaseView.prototype.setupUI = function () {
 
   this.imageElement = document.createElement('img');
   this.imageElement.src = this.image;
-  this.imageElement.width=400;
+  this.imageElement.width=600;
   this.container.appendChild(this.imageElement);
 
   this.likeButtons = document.createElement('div');
   this.likeButtons.style.overflow = 'hidden';
-  this.likeButtons.style.width = '960px';
+  // this.likeButtons.style.width = '960px';
+  this.likeButtons.style.marginLeft = '200px';
+  this.likeButtons.style.marginTop = '80px';
 
   this.likeButton = document.createElement('div');
   this.likeButton.style.width = "160px";
+  this.likeButton.style.height = "60px";
   this.likeButton.style.float = "left";
   this.likeButton.style.backgroundColor = "lime";
-  this.likeButton.innerHTML = "+";
+  // this.likeButton.innerHTML = "+";
+  this.likeButton.style.background = "transparent url('images/Smile_gut.PNG') no-repeat center center";
 
   this.dislikeButton = document.createElement('div');
   this.dislikeButton.style.width = "160px";
+  this.dislikeButton.style.height = "60px";
   this.dislikeButton.style.marginLeft = "80px";
   this.dislikeButton.style.float = "left";
   this.dislikeButton.style.backgroundColor = "orange";
-  this.dislikeButton.innerHTML = "-";
+  // this.dislikeButton.innerHTML = "-";
+  this.dislikeButton.style.background = "transparent url('images/Smile_schlecht.PNG') no-repeat center center";
 
   this.likeButtons.appendChild(this.likeButton);
   this.likeButtons.appendChild(this.dislikeButton);
@@ -55,19 +61,23 @@ BaseView.prototype.setupUI = function () {
   this.favRenovButtons.style.overflow = 'hidden';
   this.favRenovButtons.style.width = '400px';
   this.favRenovButtons.style.marginTop = '20px';
+  this.favRenovButtons.style.marginLeft = '200px';
 
   this.renovateButton = document.createElement('div');
   this.renovateButton.style.width = "160px";
+  this.renovateButton.style.height = "60px";
   this.renovateButton.style.float = "left";
   this.renovateButton.style.backgroundColor = "silver";
-  this.renovateButton.innerHTML = "renovate";
+  this.renovateButton.style.background = "transparent url('images/Renovieren.PNG') no-repeat center center";
 
   this.favoriteButton = document.createElement('div');
   this.favoriteButton.style.width = "160px";
+  this.favoriteButton.style.height = "60px";
   this.favoriteButton.style.marginLeft = "80px";
   this.favoriteButton.style.float = "left";
   this.favoriteButton.style.backgroundColor = "magenta";
-  this.favoriteButton.innerHTML = "fav";
+  // this.favoriteButton.innerHTML = "fav";
+  this.favoriteButton.style.background = "transparent url('images/Love.PNG') no-repeat center center";
 
   this.favRenovButtons.appendChild(this.renovateButton);
   this.favRenovButtons.appendChild(this.favoriteButton);

@@ -9,7 +9,7 @@ Home = function(data) {
 }
 
 Home.prototype.getUI = function () {
-  return this.currentView();
+  return this.currentView;
 };
 
 Home.prototype.getRatingOverView = function () {

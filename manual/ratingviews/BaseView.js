@@ -1,13 +1,21 @@
 BaseView = function(title, image) {
   this.image = image;
   this.title = title;
-  
+
   this.renovationCallback = null;
   this.likeCallback = null;
   this.dislikeCallback = null;
   this.favoriteCallback = null;
+  this.nextCallback = function(){};
+  this.previousCallback = function(){};
 
   this.setupUI();
+
+  this.__setOnMouseDownHandler();
+  this.__setOnMouseUpHandler();
+  this.__onMouseMoveHandler = bindFnToContext(this.__onMouseMove, this);
+  this.__mouseDownPosition = null;
+  this.__mouseUpPosition = null;
 }
 
 BaseView.prototype.setupUI = function () {
@@ -24,7 +32,7 @@ BaseView.prototype.setupUI = function () {
 
   this.likeButtons = document.createElement('div');
   this.likeButtons.style.overflow = 'hidden';
-  this.likeButtons.style.width = '400px';
+  this.likeButtons.style.width = '960px';
 
   this.likeButton = document.createElement('div');
   this.likeButton.style.width = "160px";
@@ -103,6 +111,49 @@ BaseView.prototype.setRenovationCallback = function (callback) {
 
 BaseView.prototype.setFavoriteCallback = function (callback) {
   this.favoriteCallback = callback
+};
+
+BaseView.prototype.setNextCallback = function (callback) {
+  this.nextCallback = callback;
+};
+
+BaseView.prototype.setPreviousCallback = function (callback) {
+  this.previousCallback = callback;
+};
+
+BaseView.prototype.__setOnMouseDownHandler = function () {
+  this.container.addEventListener('mousedown', bindFnToContext(this.__mouseDown, this), false);
+};
+
+BaseView.prototype.__setOnMouseUpHandler = function () {
+  this.container.addEventListener('mouseup', bindFnToContext(this.__mouseUp, this), false);
+};
+
+BaseView.prototype.__mouseDown = function (e) {
+  console.log('mouseDown');
+  this.__attachMouseMoveHandler();
+};
+
+BaseView.prototype.__mouseUp = function (e) {
+  console.log('mouseUp');
+  this.__dettachMouseMoveHandler();
+};
+
+BaseView.prototype.__attachMouseMoveHandler = function () {
+  this.container.addEventListener('mousemove', this.__onMouseMoveHandler, false);
+}
+
+BaseView.prototype.__dettachMouseMoveHandler = function () {
+  this.container.removeEventListener('mousemove', this.__onMouseMoveHandler, false);
+}
+
+BaseView.prototype.__onMouseMove = function (e) {
+  var event = e[0];
+  if(event.movementX > 20) {
+    this.nextCallback();
+  } else {
+    this.previousCallback();
+  }
 };
 
 BaseView.prototype.getUI = function () {

@@ -48,6 +48,6 @@ HomesView.prototype.populateDummyData = function () {
 
   this.addHome(new Home(data1));
   var second = new Home(data2);
-  second.setPosition(0, 320);
+  second.setPosition(60, 560);
   this.addHome(second);
 };

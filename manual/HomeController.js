@@ -31,7 +31,7 @@ HomeController.prototype.clickHandler = function(e) {
 
 
 HomeController.prototype.attachUI = function() {
-	this.container.style.width = "400px";
+	this.container.style.width = "960px";
 	this.container.style.border = "2px solid magenta";
 	this.container.style.textAlign = "center";
 

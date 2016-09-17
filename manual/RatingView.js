@@ -27,24 +27,27 @@ RatingView.prototype.getUI = function () {
 RatingView.prototype.setupUI = function () {
   this.container = document.createElement("div");
   this.container.style.position = "absolute";
-  this.container.style.width = "960px";
+  this.container.style.width = "920px";
   this.container.style.height = this.height + "px";
   this.container.style.background = "white";
   this.container.style.verticalAlign = "bottom";
   this.container.style.border = "20px solid white";
 
   this.titleBar = document.createElement("div");
+  this.titleBar.style.backgroundColor = "#009DD3"
   this.title = document.createElement("h1");
   this.title.innerHTML = "Rating";
   this.title.style.display = "inline-block";
-  this.title.style.width = "360px";
+  this.title.style.width = "660px";
   // this.title.style.backgroundColor = "orange";
+  this.title.style.color = "white";
+
 
   this.back = document.createElement("span");
   this.back.innerHTML = "<<";
   this.back.style.display = "inline-block";
   // this.back.style.marginTop = "-10px";
-  // this.back.style.backgroundColor = "lime";
+  this.back.style.backgroundColor = "lime";
   this.back.addEventListener('click', bindFnToContext(this.backClicked, this),false);
 
   this.titleBar.appendChild(this.back);

@@ -7,15 +7,18 @@ RatingView = function() {
 
 RatingView.prototype.setupAspects = function () {
   this.aspects = [];
+  try{
   this.aspects.push(new Bath('images/Bad1.jpg'));
   this.aspects.push(new Kitchen('images/Kueche.jpg'));
-  try{
+  this.aspects.push(new Schlafzimmer('images/upload.PNG'));
+  this.aspects.push(new Arbeitsweg('images/Arbeitsweg.PNG'));
+  this.aspects.push(new Neighbors('images/Nachbarschaft.PNG'));
   this.aspects.push(new FacebookNeighbors('images/Facebook_Nachbarschaft.PNG'));
+  this.aspects.push(new XingNeighbors('images/Xing_Nachbarschaft.PNG'));
+  this.aspects.push(new Property('images/Grundstueck.PNG'));
+
   } catch(e) {};
-  try{
-	  this.aspects.push(new XingNeighbors('images/Xing_Nachbarschaft.PNG'));
-	  } catch(e) {};
-};
+}
 
 RatingView.prototype.getNumberoOfAspects = function () {
   return this.aspects.length;

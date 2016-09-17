@@ -35,5 +35,5 @@ MyDataView.prototype.setupUI = function() {
 MyDataView.prototype.dataEntryClicked = function(e) {
 	var parent = this.container.parentNode;
 	parent.removeChild(this.container);
-	debugger; // haben wir die variable home?
+	parent.appendChild(window.me.controller.homescreen.getUI());
 }

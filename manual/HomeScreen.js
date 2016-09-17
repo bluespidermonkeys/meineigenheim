@@ -19,10 +19,10 @@ HomeScreen.prototype.setupUI = function () {
 
   this.menu = document.createElement('div');
 
-  this.newHome = this.__createMenuItem("Neues Objekt", 40, 560, bindFnToContext(this.newObjectClicked, this));
-  this.homes = this.__createMenuItem("Objekte", 500, 560, bindFnToContext(this.homesClicked, this));
-  this.mydata = this.__createMenuItem("Meine Daten", 40, 820, bindFnToContext(this.dataClicked, this));
-  this.beratung = this.__createMenuItem("Beratung", 500, 820, bindFnToContext(this.financingClicked, this));
+  this.newHome = this.__createMenuItem("Neues Objekt", "images/Icon_Neues_Objekt.PNG", 40, 560, bindFnToContext(this.newObjectClicked, this));
+  this.homes = this.__createMenuItem("Objekte", "images/Icon_Objekte.PNG", 500, 560, bindFnToContext(this.homesClicked, this));
+  this.mydata = this.__createMenuItem("Meine Daten", "images/Icon_Meine_Daten.PNG", 40, 820, bindFnToContext(this.dataClicked, this));
+  this.beratung = this.__createMenuItem("Beratung", "images/Icon_Beratung.PNG", 500, 820, bindFnToContext(this.financingClicked, this));
 
   this.container.appendChild(this.newHome);
   this.container.appendChild(this.homes);
@@ -63,7 +63,7 @@ HomeScreen.prototype.clickedImp = function(e) {
   window.open('http://www.baloise.ch');
 }
 
-HomeScreen.prototype.__createMenuItem = function (text, x, y, callback) {
+HomeScreen.prototype.__createMenuItem = function (text, imgurl, x, y, callback) {
   var item = document.createElement('div');
   item.innerHTML = text;
   item.style.position = "absolute";
@@ -77,6 +77,7 @@ HomeScreen.prototype.__createMenuItem = function (text, x, y, callback) {
   item.style.paddingTop = "60px";
   item.style.fontSize = "38pt";
   item.style.fontWeight = "bold";
+  item.style.background = "white url("+imgurl+") no-repeat center 10px";
 
   item.addEventListener( "click", callback, false );
 

@@ -2,6 +2,8 @@ HomesView = function () {
   this.homes = [];
   this.setupUI();
   this.populateDummyData();
+
+  window.me.homesview = this;
 }
 
 HomesView.prototype.getUI = function () {

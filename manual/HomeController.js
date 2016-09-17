@@ -8,6 +8,7 @@ HomeController = function(container) {
 	this.container = container;
 	this.attachUI();
 
+	window.me.controller = this;
 }
 
 HomeController.prototype.navigateToHomes = function () {

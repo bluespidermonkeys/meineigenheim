@@ -42,8 +42,7 @@ NewObjectView.prototype.immoscoutClicked = function(e) {
 
 NewObjectView.prototype.objectClicked = function(e) {
 	var newHome = new Home({'image':'images/Aussen1.jpg', 'cost':9, 'likes':0, 'favorites':0, 'renovations':0});
-	var parent = this.container.parentElement;
-	parent.removeChild(this.container);
-	parent.appendChild(newHome.getUI());
+	window.me.homesview.addHome(newHome);
 	newHome.showRatingView();
+	window.me.controller.navigateToHomes()
 }

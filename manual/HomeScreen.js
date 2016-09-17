@@ -21,7 +21,7 @@ HomeScreen.prototype.setupUI = function () {
   this.newHome = this.__createMenuItem("Neues Objekt", 40, 560, bindFnToContext(this.newObjectClicked, this));
   this.homes = this.__createMenuItem("Objekte", 500, 560, bindFnToContext(this.homesClicked, this));
   this.mydata = this.__createMenuItem("Meine Daten", 40, 820, bindFnToContext(this.dataClicked, this));
-  this.beratung = this.__createMenuItem("Beratung", 500, 820);
+  this.beratung = this.__createMenuItem("Beratung", 500, 820, bindFnToContext(this.financingClicked, this));
 
   this.container.appendChild(this.newHome);
   this.container.appendChild(this.homes);
@@ -52,6 +52,10 @@ HomeScreen.prototype.dataClicked = function (e) {
 
 HomeScreen.prototype.newObjectClicked = function (e) {
 	this.homeCtrl.navigateToNewObject();
+};
+
+HomeScreen.prototype.financingClicked = function (e) {
+	this.homeCtrl.navigateToFinancing();
 };
 
 HomeScreen.prototype.clickedImp = function(e) {

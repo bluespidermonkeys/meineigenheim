@@ -4,6 +4,7 @@ HomeController = function(container) {
 	this.newObjectView = new NewObjectView();
 	this.homescreen = new HomeScreen(this);
 	this.dataView = new MyDataView();
+	this.financingView = new FinancingView();
 
 	this.container = container;
 	this.attachUI();
@@ -27,6 +28,10 @@ HomeController.prototype.navigateToNewObject = function () {
 	this.container.appendChild(this.newObjectView.getUI());
 }
 
+HomeController.prototype.navigateToFinancing = function () {
+	this.container.removeChild(this.container.children[0]);
+	this.container.appendChild(this.financingView.getUI());
+}
 HomeController.prototype.attachUI2 = function() {
 	this.container.appendChild(this.homesView.getUI());
 }

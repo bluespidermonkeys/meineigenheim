@@ -16,6 +16,9 @@ RatingView.prototype.setupAspects = function () {
   this.aspects.push(new FacebookNeighbors('images/Facebook_Nachbarschaft.PNG'));
   this.aspects.push(new XingNeighbors('images/Xing_Nachbarschaft.PNG'));
   this.aspects.push(new Property('images/Grundstueck.PNG'));
+  this.aspects.push(new Gemeinde('images/Gemeinde.PNG'));
+  this.aspects.push(new Schule('images/Schule.PNG'));
+  this.aspects.push(new Einkaufen('images/Einkaufen.PNG'));
 
   } catch(e) {};
 }

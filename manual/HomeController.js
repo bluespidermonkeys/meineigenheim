@@ -12,6 +12,12 @@ HomeController = function(container) {
 	window.me.controller = this;
 }
 
+HomeController.prototype.navigateHome = function () {
+	// debugger;
+	this.container.removeChild(this.container.children[0]);
+	this.container.appendChild(this.homescreen.getUI());
+};
+
 HomeController.prototype.navigateToHomes = function () {
 	// debugger;
 	this.container.removeChild(this.container.children[0]);
@@ -63,7 +69,7 @@ return;
 }
 
 HomeController.prototype.clickHandler = function(e) {
-	debugger;
+	// debugger;
 	console.log('handler');
 	this.renovation = true;
 }

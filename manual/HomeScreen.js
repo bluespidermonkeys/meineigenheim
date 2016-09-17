@@ -20,7 +20,7 @@ HomeScreen.prototype.setupUI = function () {
 
   this.newHome = this.__createMenuItem("Neues Objekt", 40, 560, bindFnToContext(this.newObjectClicked, this));
   this.homes = this.__createMenuItem("Objekte", 500, 560, bindFnToContext(this.homesClicked, this));
-  this.mydata = this.__createMenuItem("Meine Daten", 40, 820);
+  this.mydata = this.__createMenuItem("Meine Daten", 40, 820, bindFnToContext(this.dataClicked, this));
   this.beratung = this.__createMenuItem("Beratung", 500, 820);
 
   this.container.appendChild(this.newHome);
@@ -45,6 +45,10 @@ HomeScreen.prototype.setupUI = function () {
 HomeScreen.prototype.homesClicked = function (e) {
   this.homeCtrl.navigateToHomes();
 };
+
+HomeScreen.prototype.dataClicked = function (e) {
+	this.homeCtrl.navigateToData();
+}
 
 HomeScreen.prototype.newObjectClicked = function (e) {
 	this.homeCtrl.navigateToNewObject();

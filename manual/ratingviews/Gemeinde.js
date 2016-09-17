@@ -5,7 +5,6 @@ Gemeinde = function(image) {
 
   this.setupView();
 
-  window.Gemeinde = this;
 }
 
 Gemeinde.prototype.setupView = function () {

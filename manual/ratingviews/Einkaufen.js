@@ -4,8 +4,6 @@ Einkaufen = function(image) {
   this.image = image;
 
   this.setupView();
-
-  window.Einkaufen = this;
 }
 
 Einkaufen.prototype.setupView = function () {

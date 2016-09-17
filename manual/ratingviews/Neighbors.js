@@ -5,7 +5,6 @@ Neighbors = function(image) {
 
   this.setupView();
 
-  window.Neighbors = this;
 }
 
 Neighbors.prototype.setupView = function () {

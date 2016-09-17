@@ -4,8 +4,6 @@ Jodel = function(image) {
   this.image = image;
 
   this.setupView();
-
-  window.Jodel = this;
 }
 
 Jodel.prototype.setupView = function () {

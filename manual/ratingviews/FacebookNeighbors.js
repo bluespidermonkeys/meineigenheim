@@ -5,7 +5,6 @@ FacebookNeighbors = function(image) {
 
   this.setupView();
 
-  window.FacebookNeighbors = this;
 }
 
 FacebookNeighbors.prototype.setupView = function () {

@@ -7,7 +7,7 @@ RatingView = function() {
 
 RatingView.prototype.setupAspects = function () {
   this.aspects = [];
-  try{
+  //try{
   this.aspects.push(new Bath('images/Bad1.jpg'));
   this.aspects.push(new Kitchen('images/Kueche.jpg'));
   this.aspects.push(new Schlafzimmer('images/upload.PNG'));
@@ -21,7 +21,7 @@ RatingView.prototype.setupAspects = function () {
   this.aspects.push(new Schule('images/Schule.PNG'));
   this.aspects.push(new Einkaufen('images/Einkaufen.PNG'));
 
-  } catch(e) {};
+ // } catch(e) {};
 }
 
 RatingView.prototype.getNumberoOfAspects = function () {

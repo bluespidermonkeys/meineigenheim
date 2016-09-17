@@ -4,8 +4,6 @@ Schule = function(image) {
   this.image = image;
 
   this.setupView();
-
-  window.Schule = this;
 }
 
 Schule.prototype.setupView = function () {

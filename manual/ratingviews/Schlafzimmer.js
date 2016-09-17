@@ -5,7 +5,7 @@ Schlafzimmer = function(image) {
 
   this.setupView();
 
-  window.Schlafzimmer = this;
+
 }
 
 Schlafzimmer.prototype.setupView = function () {

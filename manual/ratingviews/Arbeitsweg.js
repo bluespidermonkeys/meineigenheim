@@ -5,7 +5,6 @@ Arbeitsweg = function(image) {
 
   this.setupView();
 
-  window.Arbeitsweg = this;
 }
 
 Arbeitsweg.prototype.setupView = function () {

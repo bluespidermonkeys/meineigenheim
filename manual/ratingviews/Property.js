@@ -4,8 +4,6 @@ Property = function(image) {
   this.image = image;
 
   this.setupView();
-
-  window.Property = this;
 }
 
 Property.prototype.setupView = function () {

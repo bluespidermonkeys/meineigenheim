@@ -4,8 +4,6 @@ XingNeighbors = function(image) {
   this.image = image;
 
   this.setupView();
-
-  window.XingNeighbors = this;
 }
 
 XingNeighbors.prototype.setupView = function () {
